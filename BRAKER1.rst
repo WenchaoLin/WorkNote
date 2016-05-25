@@ -64,6 +64,7 @@ BRAKER1 属于无参的、基于RNAseq的基因组注释软件流程。软件集
 5. 将 braker.pl, AUGUSTUS bin文件夹, AUGUSTUS scripts文件夹添加到系统$PATH。
 
 ::
+
    PATH=/my_path_to_braker/:/my_path_to_augustus/bin/:/my_path_to_augustus/scripts/:$PATH
    export PATH
 
@@ -152,10 +153,6 @@ BRAKER1 有两个必选的参数：
   perl braker.pl [OPTIONS] --genome=genome.fa --hints=RNAseq.gff
 
 
-'genome.fa' is the filename (including relative path) to the file containing the query sequence(s) in fasta format.
-'RNAseq.bam' is the filename (including relative path) to the file containing the RNA-seq alingment data in bam format.
-'RNAseq.gff' is the filename (including relative path) to the file containing introns extracted from RNA-Seq information in gff format.
-
 其他参数
 ^^^^^^^^
 
@@ -200,7 +197,7 @@ Examples
 
 ::
 
-  perl braker --species=new_species  --genome=../examples/example.fa  --bam=../examples/example.bam
+  perl braker --species=new_species  --genome=example.fa  --bam=example.bam
 
 
 
@@ -284,6 +281,7 @@ BRAKER1的输出
 BRAKER1 主要有3个重要的输出文件:
 
 ::
+
   introns.gff   - 从 RNAses中提取的内含子信息.这些内含子用来训练GeneMark-ET并用来做AUGUSTUS基因预测
   genemark.gtf  - GeneMark-ET 预测的基因
   augustus.gff  - AUGUSTUS 预测的基因
